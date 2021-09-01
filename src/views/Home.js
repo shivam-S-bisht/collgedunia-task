@@ -1,52 +1,33 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import { connect } from 'react-redux'
 
 import { home, global } from '../styles'
 
 class Home extends React.Component {
 
-    data = [
-        {
-            day: 'Monday',
-            temp: 8
-        },
-        {
-            day: 'Tuesday',
-            temp: 8
-        },
-        {
-            day: 'Wednesday',
-            temp: 8
-        },
-        {
-            day: 'Thursday',
-            temp: 8
-        },
-        {
-            day: 'Friday',
-            temp: 8
-        },
+    days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-    ]
+
 
     render() {
+
+        // console.log(this.props.data.current)
 
         return (
             <View style={[home.topview]}>
                 <View style={[home.displayView, global.center]}>
-                    <Text style={home.shownTemp}>10</Text>
-                    <Text style={home.shownCity}>Delhi</Text>
+                    <Text style={home.shownTemp}>{Math.floor(this.props.data.current.temp)}</Text>
+                    <Text style={home.shownCity}>{this.props.data.timezone}</Text>
                 </View>
                 <View style={[home.others]}>
                     {
-                        this.data.map(item => {
+                        this.props.data.daily.slice(1, 7).map((item, idx) => {
                             return (
-                                <>
-                                    <View style={home.otherItem}>
-                                        <Text style={home.otherItemText}>{item.day}</Text>
-                                        <Text style={home.otherItemText}>{item.temp}</Text>
-                                    </View>
-                                </>
+                                <View style={home.otherItem} key={idx}>
+                                    <Text style={home.otherItemText}>{this.days[new Date(item.dt * 1000).getDay()]}</Text>
+                                    <Text style={home.otherItemText}>{Math.floor(item.temp.day)}</Text>
+                                </View>
                             )
                         })
                     }
@@ -56,4 +37,12 @@ class Home extends React.Component {
     }
 }
 
-export default Home
+
+const mapToProps = (state) => {
+    return {
+        data: state.data
+    }
+}
+
+
+export default connect(mapToProps)(Home)
