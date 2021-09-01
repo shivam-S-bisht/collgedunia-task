@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "collegedunia-weather",
+    "slug": "collegedunia-weather",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "collegedunia-weather"
+}
