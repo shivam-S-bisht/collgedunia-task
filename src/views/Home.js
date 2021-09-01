@@ -12,7 +12,6 @@ class Home extends React.Component {
 
     render() {
 
-        // console.log(this.props.data.current)
 
         return (
             <View style={[home.topview]}>
@@ -22,11 +21,11 @@ class Home extends React.Component {
                 </View>
                 <View style={[home.others]}>
                     {
-                        this.props.data.daily.slice(1, 7).map((item, idx) => {
+                        this.props.data.daily.slice(1, 6).map((item, idx) => {
                             return (
-                                <View style={home.otherItem} key={idx}>
-                                    <Text style={home.otherItemText}>{this.days[new Date(item.dt * 1000).getDay()]}</Text>
-                                    <Text style={home.otherItemText}>{Math.floor(item.temp.day)}</Text>
+                                <View style={[home.otherItem, {backgroundColor: idx%2==0?'#fac3e3':'#e0b5fa'}]} key={idx}>
+                                    <Text style={[home.otherItemText, {color: idx%2==0?'#cc569b':'#9247bf'}]}>{this.days[new Date(item.dt * 1000).getDay()]}</Text>
+                                    <Text style={[home.otherItemText, {color: idx%2==0?'#cc569b':'#9247bf'}]}>{Math.floor(item.temp.day)}</Text>
                                 </View>
                             )
                         })

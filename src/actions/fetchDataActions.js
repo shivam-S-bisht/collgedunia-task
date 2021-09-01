@@ -44,28 +44,6 @@ api = create({
 })
 
 
-// export const fetchData = (lat, lon) => {
-
-
-//     return (dispatch) => {
-//         console.log(lat, lon)
-
-//         this.api.get(`/forecast?q=Delhi&appid=${key}&units=metric`)
-//             .then(res => {
-//                 if (res.status == 200) {
-//                     // console.log(res.data)
-//                     dispatch({ type: "FETCH_DATA_SUCCESS", data: res.data })
-//                 } else {
-
-//                     dispatch({ type: "FETCH_DATA_FAILURE", message: err })
-//                 }
-//             })
-//             .catch(err => {
-//                 dispatch({ type: "FETCH_DATA_FAILURE", message: err })
-//             })
-//     }
-// }
-
 export const retry = () => {
     return (dispatch) => {
         dispatch({ type: "RETRY" })

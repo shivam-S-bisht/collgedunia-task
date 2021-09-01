@@ -10,7 +10,7 @@ class Error extends React.Component {
     render() {
         return (
             <View style={error.topview}>
-                <Text style={error.message}>Something Went Wrong At Our End</Text>
+                <Text style={error.message}>Something Went Wrong At Our End !</Text>
                 <TouchableOpacity style={error.retryTouchable}
                     onPress={()=>{
                         this.props.retry()

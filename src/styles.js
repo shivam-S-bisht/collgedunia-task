@@ -14,7 +14,8 @@ const home = StyleSheet.create({
     topview: {
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        backgroundColor: '#fad5cb',
     },
     
     displayView: {
@@ -24,12 +25,14 @@ const home = StyleSheet.create({
     
     shownTemp: {
         fontSize: 120,
-        color: '#000'
+        // color: '#000',
+        color: '#3766d4',
+
     },
     
     shownCity: {
         fontSize: 35,
-        color: '#000'
+        color: '#457dff'
     },
     
     others: {
@@ -37,7 +40,8 @@ const home = StyleSheet.create({
     },
     
     otherItem: {
-        borderColor: '#777',
+        // backgroundColor: '#e0b5fa',
+        borderColor: '#acaffa',
         borderTopWidth: 1,
         paddingHorizontal: 40,
         flexGrow: 1,
@@ -62,24 +66,29 @@ const error = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         flex: 1,
-        marginVertical: 100
+        paddingVertical: 100,
+        backgroundColor: '#444'
     },
 
     message: {
         fontSize: 60,
-        color: '#000'
+        color: '#ce252b',
+        fontWeight: 'bold'
     },
 
     retryTouchable: {
-        borderColor: '#777',
+        borderColor: '#ff9100',
         borderWidth: 1,
         padding: 20,
-        borderRadius: 5
+        borderRadius: 5,
+        backgroundColor: '#ffc200'
     },
 
     retryText: {
         fontSize: 20,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        color: '#000',
+        fontWeight: 'bold'
     }
 })
 
